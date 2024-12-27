@@ -16,8 +16,8 @@ def process_and_save_patches(img, patch_size, stride, output_dir, filename):
 
 # 设定文件夹路径
 input_dirs = ["A", "B", "label"]
-base_dir = "E:/JWExps/Hete/HeteData/mask_data/val"  # 替换为你的数据集路径
-output_base = "./xiongan_data/val"  # 替换为输出目录路径
+base_dir = r"D:\0Program\Datasets\241120\Compare\TEMP"  # 替换为你的数据集路径
+output_base = r"D:\0Program\Datasets\241120\Compare\TEMP\Three"  # 替换为输出目录路径
 patch_size = 512
 stride = 256  # 添加步长参数
 
