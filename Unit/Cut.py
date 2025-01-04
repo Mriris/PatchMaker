@@ -15,12 +15,12 @@ base_output_dir = r"D:\0Program\Datasets\241120\Compare\TEMP\Four\Cropped"
 os.makedirs(base_output_dir, exist_ok=True)
 
 # 定义光学和SAR图像的路径
-optical_image_path = os.path.join(base_input_dir, "optical_549596_257631.tif")
-sar_image_path = os.path.join(base_input_dir, "sar_549596_257631.tif")
+optical_image_path = os.path.join(base_input_dir, "O4.tif")
+sar_image_path = os.path.join(base_input_dir, "S4.tif")
 
 # 定义输出文件路径
-cropped_optical_output_path = os.path.join(base_output_dir, "cropped_optical_image.tif")
-cropped_sar_output_path = os.path.join(base_output_dir, "cropped_sar_image.tif")
+cropped_optical_output_path = os.path.join(base_output_dir, "O6.tif")
+cropped_sar_output_path = os.path.join(base_output_dir, "S6.tif")
 
 # 打开两幅图像并获取掩膜
 with rasterio.open(optical_image_path) as src1, rasterio.open(sar_image_path) as src2:
