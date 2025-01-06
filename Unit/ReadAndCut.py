@@ -24,11 +24,11 @@ sar_image_path_target = os.path.join(base_input_dir, "S4.tif")
 cropped_optical_output_path = os.path.join(base_output_dir, "O8.tif")
 cropped_sar_output_path = os.path.join(base_output_dir, "S8.tif")
 
-# 打开参考图像（O4 和 S4）以获取掩膜
+# 打开参考图像以获取掩膜
 with rasterio.open(optical_image_path_reference) as ref_src1, rasterio.open(sar_image_path_reference) as ref_src2:
     # 获取参考图像的掩膜（有效像素区域）
-    mask1 = ref_src1.dataset_mask() > 0  # 光学图像（O4）的有效区域掩膜
-    mask2 = ref_src2.dataset_mask() > 0  # SAR图像（S4）的有效区域掩膜
+    mask1 = ref_src1.dataset_mask() > 0  # 光学图像的有效区域掩膜
+    mask2 = ref_src2.dataset_mask() > 0  # SAR图像的有效区域掩膜
 
     # 将掩膜转换为几何对象
     shapes1 = [shape(geom) for geom, val in rasterio.features.shapes(mask1.astype(np.uint8), transform=ref_src1.transform) if val > 0]
@@ -44,7 +44,7 @@ with rasterio.open(optical_image_path_reference) as ref_src1, rasterio.open(sar_
 
     # 如果没有重叠，提示用户
     if overlap.is_empty:
-        raise ValueError("参考图像（O4 和 S4）没有实际内容的重叠区域！")
+        raise ValueError("参考图像没有实际内容的重叠区域！")
 
     # 使用重叠区域裁剪目标图像（O5 和 S5）
     with rasterio.open(optical_image_path_target) as target_src1, rasterio.open(sar_image_path_target) as target_src2:
