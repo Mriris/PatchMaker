@@ -18,11 +18,11 @@ os.makedirs(base_output_dir, exist_ok=True)
 optical_image_path_reference = os.path.join(base_input_dir, "optical_549596_257631.tif")
 sar_image_path_reference = os.path.join(base_input_dir, "sar_549596_257631.tif")
 optical_image_path_target = os.path.join(base_input_dir, "O4.tif")
-sar_image_path_target = os.path.join(base_input_dir, "S4.tif")
+sar_image_path_target = os.path.join(base_input_dir, "P10.tif")
 
 # 定义输出文件路径
-cropped_optical_output_path = os.path.join(base_output_dir, "O8.tif")
-cropped_sar_output_path = os.path.join(base_output_dir, "S8.tif")
+cropped_optical_output_path = os.path.join(base_output_dir, "O11.tif")
+cropped_sar_output_path = os.path.join(base_output_dir, "P11.tif")
 
 # 打开参考图像以获取掩膜
 with rasterio.open(optical_image_path_reference) as ref_src1, rasterio.open(sar_image_path_reference) as ref_src2:

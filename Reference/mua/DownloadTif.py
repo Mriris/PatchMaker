@@ -5,7 +5,7 @@ import geemap
 
 # 初始化 Google Earth Engine
 service_account = 'service-account@test1-447007.iam.gserviceaccount.com'
-key_file = '../Personal/test1-447007-3fb4b19a28e7.json'
+key_file = '../../Personal/test1-447007-3fb4b19a28e7.json'
 credentials = ee.ServiceAccountCredentials(service_account, key_file)
 ee.Initialize(credentials)
 
@@ -55,7 +55,7 @@ if image:
     clipped_image = image.clip(expanded_aoi).updateMask(image.select(0).gt(0))
 
     # 导出影像
-    output_file = r'D:\0Program\Python\PatchMaker\outputs\closest_to_20231030_11.tif'
+    output_file = r'/outputs/closest_to_20231030_11.tif'
     geemap.ee_export_image(
         ee_object=clipped_image,
         filename=output_file,

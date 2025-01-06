@@ -5,14 +5,14 @@ import geemap
 
 # 初始化 Google Earth Engine
 service_account = 'service-account@test1-447007.iam.gserviceaccount.com'
-key_file = '../Personal/test1-447007-3fb4b19a28e7.json'
+key_file = '../../Personal/test1-447007-3fb4b19a28e7.json'
 credentials = ee.ServiceAccountCredentials(service_account, key_file)
 ee.Initialize(credentials)
 
 print("Google Earth Engine 已成功初始化！")
 
 # 读取 GeoTIFF 文件
-tif_file = r"D:\0Program\Python\PatchMaker\intput\549596_257631.tif"
+tif_file = r"/intput/549596_257631.tif"
 with rasterio.open(tif_file) as src:
     bounds = src.bounds
     crs = src.crs
