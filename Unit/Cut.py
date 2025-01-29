@@ -8,19 +8,19 @@ from shapely.ops import unary_union
 import geopandas as gpd
 
 # 设置基础输入和输出目录
-base_input_dir = r"D:\0Program\Datasets\241120\Compare\TEMP\Four\Origin"
-base_output_dir = r"D:\0Program\Datasets\241120\Compare\TEMP\Four\Cropped"
+base_input_dir = r"D:\0Program\Python\labelme_cd_AI\examples\change_detective"
+base_output_dir = r"D:\0Program\Python\labelme_cd_AI\examples\change_detective"
 
 # 确保输出目录存在
 os.makedirs(base_output_dir, exist_ok=True)
 
 # 定义光学和SAR图像的路径
-optical_image_path = os.path.join(base_input_dir, "O4.tif")
-sar_image_path = os.path.join(base_input_dir, "S4.tif")
+optical_image_path = os.path.join(base_input_dir, "A0.tif")
+sar_image_path = os.path.join(base_input_dir, "B0.tif")
 
 # 定义输出文件路径
-cropped_optical_output_path = os.path.join(base_output_dir, "O6.tif")
-cropped_sar_output_path = os.path.join(base_output_dir, "S6.tif")
+cropped_optical_output_path = os.path.join(base_output_dir, "A9.tif")
+cropped_sar_output_path = os.path.join(base_output_dir, "B9.tif")
 
 # 打开两幅图像并获取掩膜
 with rasterio.open(optical_image_path) as src1, rasterio.open(sar_image_path) as src2:
@@ -38,7 +38,7 @@ with rasterio.open(optical_image_path) as src1, rasterio.open(sar_image_path) as
 
     # 计算重叠区域（直接使用几何对象的 intersection 方法）
     overlap = union1.intersection(union2)
-    print("重叠区域:", overlap)
+    # print("重叠区域:", overlap)
 
     # 如果没有重叠，提示用户
     if overlap.is_empty:
