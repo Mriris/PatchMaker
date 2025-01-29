@@ -3,8 +3,8 @@ import json
 from shapely.geometry import shape, box, mapping
 
 # 加载原始 GeoJSON 文件
-input_file = r"/home/iris/Datasets/JW1/Area/area2.geojson"
-output_folder = r"/home/iris/Datasets/JW1/Area/split_parts/"
+input_file = r"D:\0Program\Datasets\241120\Compare\TEMP\JW/area2.geojson"
+output_folder = r"D:\0Program\Datasets\241120\Compare\TEMP\JW/Area/split_parts/"
 
 # 检查并创建目标文件夹
 if not os.path.exists(output_folder):

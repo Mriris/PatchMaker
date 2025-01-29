@@ -71,7 +71,7 @@ if intersection_size == 0:
 clipped_image = image.clip(intersection)
 
 # 导出影像
-output_file = r'D:\0Program\Python\PatchMaker\outputs\image_7.tif'
+output_file = r'/Datasets/outputs\image_7.tif'
 geemap.ee_export_image(
     ee_object=clipped_image,
     filename=output_file,
