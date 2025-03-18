@@ -6,7 +6,7 @@ from skimage import io
 
 # 设定文件夹路径
 input_dirs = ["A", "B", "label"]
-base_dir = "../../"  # 替换为你的数据集路径"
+base_dir = "../../../"  # 替换为你的数据集路径"
 output_base = "./mask_data"  # 替换为输出目录路径
 patch_size = 512
 zero_threshold = 100  # 切片中0的最大数量

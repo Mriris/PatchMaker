@@ -47,7 +47,7 @@ Python部分分为根目录和 **Unit** 目录两个主要部分：
 
 ## IDL 部分
 
-IDL部分（原IDL_GeoProcessingSuite）主要用于高分三号（GF3）数据处理，分为 **Unit** 和 **Integration** 两个部分：
+主要用于高分三号（GF3）数据处理，分为 **Unit** 和 **Integration** 两个部分：
 
 ### IDL/Unit 文件夹
 单元模块，负责实现数据处理的核心功能，包括以下脚本（按执行顺序）：
@@ -107,18 +107,13 @@ IDL部分（原IDL_GeoProcessingSuite）主要用于高分三号（GF3）数据�
 - ENVI 软件（建议版本：5.6 或 6.1）
 - 高分三号数据文件
 
-### 安装依赖
-#### Python 依赖安装
-```bash
-pip install -r requirements.txt
-```
-
 ### 快速开始
 
 #### Python 部分
-1. 克隆本项目到本地：
+1. 克隆本项目到本地并安装依赖：
    ```bash
    git clone https://github.com/Mriris/PatchMaker.git
+   pip install -r Python/requirements.txt
    ```
 
 2. 根据需要修改脚本中的文件路径：
@@ -127,15 +122,15 @@ pip install -r requirements.txt
 3. 执行特定功能：
    - 裁剪两幅影像的重叠区域：
      ```bash
-     python Unit/Cut.py
+     python Python/Unit/Cut.py
      ```
    - 基于多源影像进行裁剪：
      ```bash
-     python Cuts.py
+     python Python/Cuts.py
      ```
    - 提取影像边界为 GeoJSON：
      ```bash
-     python Reads.py
+     python Python/Reads.py
      ```
 
 #### IDL 部分
