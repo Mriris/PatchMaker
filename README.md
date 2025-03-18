@@ -194,7 +194,7 @@ Python部分分为根目录和 **Unit** 目录两个主要部分：
    地面分辨率计算公式为：
 
 ```math
-\text{ground\_resolution} = \frac{\text{pixel\_spacing\_rg}}{\sin \left( \frac{\pi \cdot \text{incidence\_angle}}{180} \right)}
+\text{ground_resolution} = \frac{\text{pixel_spacing_rg}}{\sin \left( \frac{\pi \cdot \text{incidence_angle}}{180} \right)}
 ```
 
    - `pixel_spacing_rg` 是雷达方向的像素间距
@@ -205,7 +205,7 @@ Python部分分为根目录和 **Unit** 目录两个主要部分：
    Range 多视因子计算公式为：
 
 ```math
-\text{range\_multilook} = \lceil \frac{\text{ground\_resolution}}{\text{pixel\_spacing\_rg}} \rceil
+\text{range_multilook} = \lceil \frac{\text{ground_resolution}}{\text{pixel_spacing_rg}} \rceil
 ```
 
    - `pixel_spacing_rg` 是雷达方向上的像素间距
@@ -215,7 +215,7 @@ Python部分分为根目录和 **Unit** 目录两个主要部分：
    Azimuth 多视因子计算公式为：
 
 ```math
-\text{azimuth\_multilook} = \lceil \frac{\text{ground\_resolution}}{\text{pixel\_spacing\_az}} \rceil
+\text{azimuth_multilook} = \lceil \frac{\text{ground_resolution}}{\text{pixel_spacing_az}} \rceil
 ```
 
    - `pixel_spacing_az` 是方位方向上的像素间距
