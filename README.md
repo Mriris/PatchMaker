@@ -100,17 +100,11 @@ IDL部分（原IDL_GeoProcessingSuite）主要用于高分三号（GF3）数据�
 ## 使用说明
 
 ### Python 环境要求
-- Python 3.8 或更高版本
-- 依赖库：
-  - rasterio
-  - numpy
-  - shapely
-  - geopandas
-  - json
+- Python 3.13
 
 ### IDL 环境要求
-- IDL 环境（建议版本：8.8）
-- ENVI 软件（建议版本：5.6）
+- IDL 环境（建议版本：8.8 或 9.1）
+- ENVI 软件（建议版本：5.6 或 6.1）
 - 高分三号数据文件
 
 ### 安装依赖
