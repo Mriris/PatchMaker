@@ -10,7 +10,7 @@ import geopandas as gpd
 # 设置输入和输出目录
 base_input_dir_1 = r"C:\0Program\Datasets\241120\Compare\Datas\tif_A"  # 第一个文件夹（多个x_y.tif）
 base_input_dir_2 = r"C:\0Program\Datasets\241120\Compare\Datas\B"  # 参考用的文件夹（y.tif）
-base_input_dir_3 = r"C:\0Program\Datasets\241120\Compare\Datas\tif_B"  # 第三个文件夹（y.tif，与第二个文件夹文件名相同）
+base_input_dir_3 = r"C:\0Program\Datasets\241120\Compare\Datas\tif_C"  # 第三个文件夹（y.tif，与第二个文件夹文件名相同）
 base_output_dir = r"C:\0Program\Datasets\241120\Compare\Datas\out"  # 输出文件夹
 
 # 确保输出目录存在
@@ -22,11 +22,12 @@ input_files_1 = [f for f in os.listdir(base_input_dir_1) if f.endswith('.tif')]
 # 遍历第一个文件夹的文件
 for filename in input_files_1:
     # 从文件名中提取y部分
-    y_value = filename.split('_')[1].split('.')[0]
-
+    y_value = filename.split('_')[1].split('.')[0]    # y.tif
+    # y_value = filename.split('.')[0]    # x_y.tif
     # 构建第二个和第三个文件夹中对应的文件路径
     second_image_path = os.path.join(base_input_dir_2, f"{y_value}.tif")
-    third_image_path = os.path.join(base_input_dir_3, f"{y_value}.tif")
+    # third_image_path = os.path.join(base_input_dir_3, f"{y_value}.tif")
+    third_image_path = os.path.join(base_input_dir_3, f"{filename.split('.')[0]}.tif")
 
     if not os.path.exists(second_image_path):
         print(f"未找到对应的y值文件: {second_image_path}")
@@ -87,11 +88,11 @@ for filename in input_files_1:
 
         # 定义输出路径
         output_image_1 = os.path.join(base_output_dir, f"{filename.split('.')[0]}_A.tif")
-        output_image_3 = os.path.join(base_output_dir, f"{filename.split('.')[0]}_B.tif")
+        output_image_3 = os.path.join(base_output_dir, f"{filename.split('.')[0]}_C.tif")
 
         # 保存裁剪后的图像
-        with rasterio.open(output_image_1, "w", **meta1) as dest1:
-            dest1.write(cropped_image1)
+        # with rasterio.open(output_image_1, "w", **meta1) as dest1:
+        #     dest1.write(cropped_image1)
 
         with rasterio.open(output_image_3, "w", **meta3) as dest3:
             dest3.write(cropped_image3)
